@@ -143,14 +143,14 @@ namespace UserRegistrationProblem
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The password- {input} is valid");
-                    break;
+                    //break;
 
                 }
                 else
                 {
                     Console.WriteLine("The password does not match specified condition");
                     Console.WriteLine("Please enter country code, followed by space and 10 digit mobile no");
-                    Console.WriteLine("Please enter the password again");
+                    //Console.WriteLine("Please enter the password again");
                 }
             }
         }
