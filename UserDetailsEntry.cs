@@ -62,5 +62,34 @@ namespace UserRegistrationProblem
             }
 
         }
+        public static void Email()
+        {
+            UserRegistration userRegistration = new UserRegistration();
+            while (true)
+            {
+                Console.WriteLine("Please enter the user Email for registration");
+                string input = Console.ReadLine();
+                if (input == "")
+                {
+                    Console.WriteLine("No email entered");
+                    break;
+
+                }
+
+
+                bool validationForUserName = userRegistration.Email(input);
+                if (validationForUserName)
+                {
+                    Console.WriteLine($"The email- {input} is valid");
+                    //break;
+
+                }
+                else
+                {
+                    Console.WriteLine("The name does not match specified condition");
+                    Console.WriteLine("Please enter the email again");
+                }
+            }
+        }
     }
 }

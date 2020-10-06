@@ -9,6 +9,8 @@ namespace UserRegistrationProblem
             //UserDetailsEntry userDetailsEntry = new UserDetailsEntry();
             UserDetailsEntry.FirstName();
             UserDetailsEntry.LastName();
+            UserDetailsEntry.Email();
+
         }
     }
 }
