@@ -6,6 +6,9 @@ namespace UserRegistrationProblem
 {
     class UserDetailsEntry
     {
+        /// <summary>
+        /// Takes input for first name and instatiates class to match with pattern.
+        /// </summary>
         public static void FirstName()
         {
             UserRegistration userRegistration = new UserRegistration();
@@ -15,6 +18,7 @@ namespace UserRegistrationProblem
                 string input = Console.ReadLine();
                 if (input == "")
                 {
+                    //no user name is entered
                     Console.WriteLine("No user name entered");
                     break;
 
@@ -24,6 +28,7 @@ namespace UserRegistrationProblem
                 bool validationForUserName = userRegistration.FirstAndLastName(input);
                 if (validationForUserName)
                 {
+                    //user name matches with the pattern
                     Console.WriteLine($"The user name- {input} is valid");
                     Console.WriteLine("Do you want to check again, press y to check");
                     string check = Console.ReadLine();
