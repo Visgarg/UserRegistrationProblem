@@ -17,5 +17,10 @@ namespace UserRegistrationProblem
             string emailPattern = @"^[a-z]{1}[a-z0-9]*([._]?[a-z0-9]+)*\@[a-z0-9]+\.(com|net)(\.[a-z]{2})?$";
             return Regex.IsMatch(input, emailPattern);
         }
+        public bool MobileNo(string input)
+        {
+            string mobileNoPattern = @"\d{2}\s{1}[6-9]{1}\d{9}";
+            return Regex.IsMatch(input, mobileNoPattern);
+        }
     }
 }
