@@ -16,6 +16,7 @@ namespace UserRegistrationProblem
                 if (input == "")
                 {
                     Console.WriteLine("No user name entered");
+                    break;
 
                 }
 
@@ -24,13 +25,24 @@ namespace UserRegistrationProblem
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The user name- {input} is valid");
-                    break;
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
                 }
                 else
                 {
                     Console.WriteLine("The name does not match specified condition");
                     Console.WriteLine("Please enter 1st alphabet as capital and min 3 alphabets");
-                    Console.WriteLine("Please enter the user name again");
+                    //Console.WriteLine("Please enter the user name again");
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -52,14 +64,24 @@ namespace UserRegistrationProblem
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The last name- {input} is valid");
-
-                    break;
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
                 }
                 else
                 {
                     Console.WriteLine("The name does not match specified condition");
                     Console.WriteLine("Please enter 1st alphabet as capital and min 3 alphabets");
-                    Console.WriteLine("Please enter the user name again");
+                    //Console.WriteLine("Please enter the user name again");
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
                 }
             }
 
@@ -74,7 +96,7 @@ namespace UserRegistrationProblem
                 if (input == "")
                 {
                     Console.WriteLine("No email entered");
-                    //break;
+                    break;
 
                 }
 
@@ -83,14 +105,27 @@ namespace UserRegistrationProblem
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The email- {input} is valid");
-                    break;
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
 
                 }
                 else
                 {
                     Console.WriteLine("The name does not match specified condition");
                     Console.WriteLine("Please enter mail id in form of abc.xyz@mnop.com.in");
-                    Console.WriteLine("Please enter the email again");
+                    //Console.WriteLine("Please enter the email again");
+                    //Console.WriteLine("Do you want to check again");
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
+
                 }
             }
         }
@@ -104,7 +139,7 @@ namespace UserRegistrationProblem
                 if (input == "")
                 {
                     Console.WriteLine("No mobile no entered");
-                    //break;
+                    break;
 
                 }
 
@@ -113,14 +148,25 @@ namespace UserRegistrationProblem
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The mobile no- {input} is valid");
-                    break;
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
 
                 }
                 else
                 {
                     Console.WriteLine("The mobile no does not match specified condition");
                     Console.WriteLine("Please enter country code, followed by space and 10 digit mobile no");
-                    Console.WriteLine("Please enter the mobile no again");
+                    //Console.WriteLine("Please enter the mobile no again");
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -144,6 +190,12 @@ namespace UserRegistrationProblem
                 {
                     Console.WriteLine($"The password- {input} is valid");
                     //break;
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
 
                 }
                 else
@@ -151,8 +203,15 @@ namespace UserRegistrationProblem
                     Console.WriteLine("The password does not match specified condition");
                     Console.WriteLine("Please enter country code, followed by space and 10 digit mobile no");
                     //Console.WriteLine("Please enter the password again");
+                    Console.WriteLine("Do you want to check again, press y to check");
+                    string check = Console.ReadLine();
+                    if (check.ToLower() != "y")
+                    {
+                        break;
+                    }
                 }
             }
         }
+        
     }
 }
