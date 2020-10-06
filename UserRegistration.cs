@@ -24,7 +24,8 @@ namespace UserRegistrationProblem
         }
         public bool Password(string input)
         {
-            string passwordPattern = @"^[a-zA-Z0-9]{8,}$";
+            //string passwordPattern = "^([A-Z]+[a-z0-9]*){8,}";
+            string passwordPattern = @"^(?=.*[A-Z])[a-zA-Z\d]{8,}$";
             return Regex.IsMatch(input, passwordPattern);
         }
     }
