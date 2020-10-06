@@ -11,11 +11,12 @@ namespace UserRegistrationProblem
             const string EMAIL_CHECK = "c";
             const string MOBILE_NO_CHECK = "d";
             const string EXIT = "x";
+            const string PASSWORD_CHECK = "e";
             Console.WriteLine("Welcome to User Registration Problem");
             bool flag = true;
             while(flag)
             {
-                Console.WriteLine("Press A for validating first name \npress B for validating last name\npress C for validating email id\npress D for validating mobile no\nPress X for exit");
+                Console.WriteLine("\nPress A for validating first name \npress B for validating last name\npress C for validating email id\npress D for validating mobile no\npress E to validate Password\nPress X for exit");
                 string checkType = Console.ReadLine();
                 switch(checkType.ToLower())
                 {
@@ -33,6 +34,9 @@ namespace UserRegistrationProblem
                         break;
                     case EXIT:
                         flag = false;
+                        break;
+                    case PASSWORD_CHECK:
+                        UserDetailsEntry.Password();
                         break;
                     default:
                         Console.WriteLine("Please enter a valid input");

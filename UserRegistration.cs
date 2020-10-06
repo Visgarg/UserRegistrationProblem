@@ -22,5 +22,10 @@ namespace UserRegistrationProblem
             string mobileNoPattern = @"\d{2}\s{1}[6-9]{1}\d{9}";
             return Regex.IsMatch(input, mobileNoPattern);
         }
+        public bool Password(string input)
+        {
+            string passwordPattern = @"^[a-zA-Z0-9]{8,}$";
+            return Regex.IsMatch(input, passwordPattern);
+        }
     }
 }

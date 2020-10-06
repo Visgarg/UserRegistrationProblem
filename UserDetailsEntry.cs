@@ -124,5 +124,35 @@ namespace UserRegistrationProblem
                 }
             }
         }
+        public static void Password()
+        {
+            UserRegistration userRegistration = new UserRegistration();
+            while (true)
+            {
+                Console.WriteLine("Please enter the password for registration");
+                string input = Console.ReadLine();
+                if (input == "")
+                {
+                    Console.WriteLine("No password entered");
+                    break;
+
+                }
+
+
+                bool validationForUserName = userRegistration.Password(input);
+                if (validationForUserName)
+                {
+                    Console.WriteLine($"The password- {input} is valid");
+                    break;
+
+                }
+                else
+                {
+                    Console.WriteLine("The password does not match specified condition");
+                    Console.WriteLine("Please enter country code, followed by space and 10 digit mobile no");
+                    Console.WriteLine("Please enter the password again");
+                }
+            }
+        }
     }
 }
