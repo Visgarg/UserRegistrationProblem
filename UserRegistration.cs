@@ -25,7 +25,10 @@ namespace UserRegistrationProblem
         public bool Password(string input)
         {
             //string passwordPattern = "^([A-Z]+[a-z0-9]*){8,}";
-            string passwordPattern = @"^(?=.*[A-Z])[a-zA-Z\d]{8,}$";
+            string passwordPattern = @"^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z\d]{8,}$";
+            //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+            //https://stackoverflow.com/questions/21197394/what-does-do-in-regex/21197429
+            //https://stackoverflow.com/questions/10804732/what-is-the-difference-between-and-in-regex
             return Regex.IsMatch(input, passwordPattern);
         }
     }
