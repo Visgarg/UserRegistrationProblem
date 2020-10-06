@@ -6,7 +6,7 @@ namespace UserRegistrationProblem
 {
     class UserRegistration
     {
-        public bool UserPatternMaking(string input)
+        public bool FirstAndLastName(string input)
         {
             string firstNamePattern = "[A-Z]{1}[A-Za-z]{2,}";
             return Regex.IsMatch(input, firstNamePattern);
