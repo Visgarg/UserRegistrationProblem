@@ -29,6 +29,7 @@ namespace UserRegistrationProblem
                 else
                 {
                     Console.WriteLine("The name does not match specified condition");
+                    Console.WriteLine("Please enter 1st alphabet as capital and min 3 alphabets");
                     Console.WriteLine("Please enter the user name again");
                 }
             }
@@ -57,6 +58,7 @@ namespace UserRegistrationProblem
                 else
                 {
                     Console.WriteLine("The name does not match specified condition");
+                    Console.WriteLine("Please enter 1st alphabet as capital and min 3 alphabets");
                     Console.WriteLine("Please enter the user name again");
                 }
             }
@@ -72,7 +74,7 @@ namespace UserRegistrationProblem
                 if (input == "")
                 {
                     Console.WriteLine("No email entered");
-                    break;
+                    //break;
 
                 }
 
@@ -81,13 +83,44 @@ namespace UserRegistrationProblem
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The email- {input} is valid");
-                    //break;
+                    break;
 
                 }
                 else
                 {
                     Console.WriteLine("The name does not match specified condition");
+                    Console.WriteLine("Please enter mail id in form of abc.xyz@mnop.com.in");
                     Console.WriteLine("Please enter the email again");
+                }
+            }
+        }
+        public static void MobileNo()
+        {
+            UserRegistration userRegistration = new UserRegistration();
+            while (true)
+            {
+                Console.WriteLine("Please enter the user mobile no for registration");
+                string input = Console.ReadLine();
+                if (input == "")
+                {
+                    Console.WriteLine("No mobile no entered");
+                    //break;
+
+                }
+
+
+                bool validationForUserName = userRegistration.MobileNo(input);
+                if (validationForUserName)
+                {
+                    Console.WriteLine($"The mobile no- {input} is valid");
+                    break;
+
+                }
+                else
+                {
+                    Console.WriteLine("The mobile no does not match specified condition");
+                    Console.WriteLine("Please enter country code, followed by space and 10 digit mobile no");
+                    Console.WriteLine("Please enter the mobile no again");
                 }
             }
         }
