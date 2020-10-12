@@ -13,9 +13,21 @@ namespace UserRegistrationProblem
         /// <returns></returns>
         public bool FirstAndLastName(string input)
         {
-            //pattern for first name and last name
-            string firstNamePattern = "[A-Z]{1}[A-Za-z]{2,}";
-            return Regex.IsMatch(input, firstNamePattern);
+            try
+            {
+                if (input.Equals(string.Empty))
+                {
+                    throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.EMPTY_MESSAGE, "first name and last name can not be empty");
+                }
+                    //pattern for first name and last name
+                    string firstNamePattern = "[A-Z]{1}[A-Za-z]{2,}";
+                    return Regex.IsMatch(input, firstNamePattern);
+
+            }
+            catch(NullReferenceException)
+            {
+                throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.NULL_MESSAGE, "first name and last name can not be null");
+            }
 
         }
         public bool Email(string input)
