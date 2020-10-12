@@ -4,8 +4,13 @@ namespace UserRegistrationProblem
 {
     class Program
     {
+        /// <summary>
+        /// main method to switch to type of pattern to be matched.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
+            //constants for switch condition
             const string FIRST_NAME_CHECK = "a";
             const string LAST_NAME_CHECK = "b";
             const string EMAIL_CHECK = "c";
@@ -21,6 +26,7 @@ namespace UserRegistrationProblem
                 switch(checkType.ToLower())
                 {
                     case FIRST_NAME_CHECK:
+                        //going to userdetailsentry class for taking inputs.
                         UserDetailsEntry.FirstName();
                         break;
                     case LAST_NAME_CHECK:
