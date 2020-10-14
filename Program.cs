@@ -19,10 +19,13 @@ namespace UserRegistrationProblem
             const string PASSWORD_CHECK = "e";
             Console.WriteLine("Welcome to User Registration Problem");
             bool flag = true;
+            //flag is turned false when exit is called.
             while(flag)
             {
                 Console.WriteLine("\nPress A for validating first name \npress B for validating last name\npress C for validating email id\npress D for validating mobile no\npress E to validate Password\nPress X for exit");
+                //checktype saves the input from console.
                 string checkType = Console.ReadLine();
+                //checktype helps in switching between calling of methods.
                 switch(checkType.ToLower())
                 {
                     case FIRST_NAME_CHECK:

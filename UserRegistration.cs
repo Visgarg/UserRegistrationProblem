@@ -13,6 +13,7 @@ namespace UserRegistrationProblem
         /// <returns></returns>
         public bool FirstAndLastName(string input)
         {
+            //try and catch for throwing custom exception when string is empty or null.
             try
             {
                 if (input.Equals(string.Empty))
@@ -20,6 +21,7 @@ namespace UserRegistrationProblem
                     throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.EMPTY_MESSAGE, "first name and last name can not be empty");
                 }
                     //pattern for first name and last name
+                    //matches pattern with input and returns bool value.
                     string firstNamePattern = "[A-Z]{1}[A-Za-z]{2,}";
                     return Regex.IsMatch(input, firstNamePattern);
 
@@ -30,7 +32,17 @@ namespace UserRegistrationProblem
             }
 
         }
-        public bool Email(string input)
+        /// <summary>
+        /// Emails the specified input.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        /// <exception cref="UserRegistrationProblem.UserRegistrationCustomException">
+        /// email can not be empty or null
+        /// or
+        /// email can not be empty or null
+        /// </exception>
+       public bool Email(string input)
         {
             try
             {
@@ -42,6 +54,7 @@ namespace UserRegistrationProblem
                 //string emailPattern = @"^[a-z]{1}[a-z0-9]*([._]?[a-z0-9]+)*\@[a-z0-9]+\.(com|net)(\.[a-z]{2})?$";
                 string emailPattern = @"^([a-z0-9A-Z])+([._+-]?[a-z0-9A-Z]+)*[@]{1}[a-z0-9A-Z]+[.]{1}[a-zA-Z]{3}([.]{1}[a-z]{2})?$";
                 //satisfies all sample cases of mails.
+                //returns true if input matches with email pattern.
                 return Regex.IsMatch(input, emailPattern);
             }
             catch (NullReferenceException)
@@ -50,6 +63,16 @@ namespace UserRegistrationProblem
             }
 
         }
+        /// <summary>
+        /// Mobiles the no.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        /// <exception cref="UserRegistrationCustomException">
+        /// UserRegistrationCustomException.ExceptionType.EMPTY_MESSAGE, mobile no can not be empty or null
+        /// or
+        /// UserRegistrationCustomException.ExceptionType.EMPTY_MESSAGE, mobile no can not be empty or null
+        /// </exception>
         public bool MobileNo(string input)
         {
             try
@@ -68,6 +91,16 @@ namespace UserRegistrationProblem
                 throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.NULL_MESSAGE, "mobile no can not be empty or null");
             }
         }
+        /// <summary>
+        /// Passwords the specified input.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        /// <exception cref="UserRegistrationCustomException">
+        /// UserRegistrationCustomException.ExceptionType.EMPTY_MESSAGE, password can not be empty or null
+        /// or
+        /// UserRegistrationCustomException.ExceptionType.EMPTY_MESSAGE, password can not be empty or null
+        /// </exception>
         public bool Password(string input)
         {
             try
