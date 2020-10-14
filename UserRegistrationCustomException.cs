@@ -11,7 +11,7 @@ namespace UserRegistrationProblem
         /// </summary>
         public enum ExceptionType
         {
-            NULL_MESSAGE, EMPTY_MESSAGE,CAPITAL_LETTER
+            invalid_name, invalid_email, invalid_phone, invalid_password,EMPTY_MESSAGE
         }
         private readonly ExceptionType type;
         /// <summary>
