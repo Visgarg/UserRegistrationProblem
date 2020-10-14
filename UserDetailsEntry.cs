@@ -51,16 +51,21 @@ namespace UserRegistrationProblem
                 }
             }
         }
+        /// <summary>
+        /// Takes the input for last name and calls method in user registration to match the pattern.
+        /// </summary>
         public static  void LastName()
         {
             UserRegistration userRegistration = new UserRegistration();
-            while (true)
+            //try block for catching null value and empty strings
+            //it also helps to eliminate while loop
+            try
             {
                 Console.WriteLine("Please enter the user last name for registration");
                 string input = Console.ReadLine();
                 if (input == "")
                 {
-                    Console.WriteLine("No user name entered");
+                    throw new ArgumentException(string.Format("last name can not be empty"));
 
                 }
 
@@ -69,12 +74,7 @@ namespace UserRegistrationProblem
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The last name- {input} is valid");
-                    Console.WriteLine("Do you want to check again, press y to check");
-                    string check = Console.ReadLine();
-                    if (check.ToLower() != "y")
-                    {
-                        break;
-                    }
+
                 }
                 else
                 {
@@ -83,17 +83,34 @@ namespace UserRegistrationProblem
                     //Console.WriteLine("Please enter the user name again");
                     Console.WriteLine("Do you want to check again, press y to check");
                     string check = Console.ReadLine();
-                    if (check.ToLower() != "y")
+                    if (check.ToLower() == "y")
                     {
-                        break;
+                        LastName();   
                     }
                 }
             }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine("Message can not be empty\n"+ ex.GetType().Name+ "\n"+ex.Message);
+                LastName();
+
+            }
+            catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+                LastName();
+            }
 
         }
+        /// <summary>
+        /// Creating a method email to pass an input to user registration and matching it with pattern.
+        /// </summary>
         public static void Email()
         {
             UserRegistration userRegistration = new UserRegistration();
+            //loop runs until break statement
+            //better method is of try catch and passing method name again as done in last name method.
+
             while (true)
             {
                 Console.WriteLine("Please enter the user Email for registration");
@@ -105,7 +122,7 @@ namespace UserRegistrationProblem
 
                 }
 
-
+                //passing email to user registration and returning a bool vallue.
                 bool validationForUserName = userRegistration.Email(input);
                 if (validationForUserName)
                 {
@@ -134,6 +151,9 @@ namespace UserRegistrationProblem
                 }
             }
         }
+        /// <summary>
+        ///Creating a method mobileno to pass an input to user registration and matching it with pattern.
+        /// </summary>
         public static void MobileNo()
         {
             UserRegistration userRegistration = new UserRegistration();
@@ -175,32 +195,31 @@ namespace UserRegistrationProblem
                 }
             }
         }
+        /// <summary>
+        /// Creating a method mobileno to pass an input to user registration and matching it with pattern.
+        /// </summary>
         public static void Password()
         {
+            //creates a object of class
             UserRegistration userRegistration = new UserRegistration();
-            while (true)
+            //try catch block to find out null or empty value.
+            try
             {
                 Console.WriteLine("Please enter the password for registration");
                 string input = Console.ReadLine();
                 if (input == "")
                 {
-                    Console.WriteLine("No password entered");
-                    break;
+                    throw new ArgumentException(string.Format("no password was entered"));
 
                 }
 
-
+                //matching the input with pattern in user registration.Password class.
                 bool validationForUserName = userRegistration.Password(input);
                 if (validationForUserName)
                 {
                     Console.WriteLine($"The password- {input} is valid");
                     //break;
-                    Console.WriteLine("Do you want to check again, press y to check");
-                    string check = Console.ReadLine();
-                    if (check.ToLower() != "y")
-                    {
-                        break;
-                    }
+
 
                 }
                 else
@@ -208,14 +227,27 @@ namespace UserRegistrationProblem
                     Console.WriteLine("The password does not match specified condition");
                     Console.WriteLine("Please enter country code, followed by space and 10 digit mobile no");
                     //Console.WriteLine("Please enter the password again");
-                    Console.WriteLine("Do you want to check again, press y to check");
-                    string check = Console.ReadLine();
-                    if (check.ToLower() != "y")
-                    {
-                        break;
-                    }
+                    
+                }
+                Console.WriteLine("Do you want to check again, press y to check");
+                string check = Console.ReadLine();
+                if (check.ToLower() == "y")
+                {
+                    Password();
                 }
             }
+            //calls the password method again if exception is catched.
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Password();
+            }
+            catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Password();
+            }
+
         }
         
     }
